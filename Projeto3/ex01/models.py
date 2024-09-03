@@ -27,14 +27,17 @@ def format_prompt(job_description: str):
 
 """ OLLAMA """
 def query_ollama(formatted_prompt):
-    response = ollama.chat(model='qwen2:1.5b', messages=[
-        {
-            'role': 'user',
-            'content': formatted_prompt,
-        },
-    ])
+    print("Consultando Ollama...")
+    try:
+        response = ollama.chat(model='qwen2:1.5bd', messages=[
+            {
+                'role': 'user',
+                'content': formatted_prompt,
+            },
+        ])
+    except Exception as error:
+        return {"Error": str(error)}
     return {"Qwen2 1.5B": response['message']['content']}
-
 
 """ GROQ """
 client = Groq(
@@ -42,14 +45,18 @@ client = Groq(
 )
 
 def query_groq(formatted_prompt):
-    chat_completion = client.chat.completions.create(
-    messages=[
-        {
-            "role": "user",
-            "content": formatted_prompt,
-        }
-    ],
-    model="llama3-8b-8192")
+    print("Consultando Groq...")
+    try:
+        chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                "role": "user",
+                "content": formatted_prompt,
+            }
+        ],
+        model="llama3-8b-8192")
+    except Exception as error:
+        return {"Error": str(error)}
     return {"Llama 3 8B": chat_completion.choices[0].message.content}
 
 
@@ -57,8 +64,12 @@ def query_groq(formatted_prompt):
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 
 def query_gemini(formatted_prompt):
-    model = genai.GenerativeModel(model_name="gemini-1.5-flash")
-    response = model.generate_content(formatted_prompt)
+    print("Consultando Gemini...")
+    try:
+        model = genai.GenerativeModel(model_name="gemini-1.5-flash")
+        response = model.generate_content(formatted_prompt)
+    except Exception as error:
+        return {"Error": str(error)}
     return {"Gemini 1.5 Flash": response.text}
 
 
