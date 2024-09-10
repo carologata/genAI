@@ -1,6 +1,6 @@
 # genAI
 
-# Para criar um ambiente virtual do python
+# Criar um ambiente virtual do python
 
 ```bash
 #Crie uma pasta 
@@ -82,3 +82,9 @@ print(chat_completion.choices[0].message.content)
 ```
 Source: https://console.groq.com/docs/quickstart
 
+# Configurar ChromaDB
+
+```bash
+#Install ChromaDB Libray
+pip install chromadb
+``
