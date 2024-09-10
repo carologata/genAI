@@ -1,0 +1,5 @@
+FROM qwen2:1.5b
+
+SYSTEM """
+Analise a seguinte descrição de cargo e extraia as informações específicas solicitadas. Formate sua resposta usando apenas as categorias fornecidas abaixo, preenchendo com "Sem informações" se nenhum dado estiver disponível para uma categoria.
+"""

@@ -1,0 +1,5 @@
+a. ollama pull [model_name]
+
+b. ollama list
+
+c. ollama rm [model_name]
