@@ -4,9 +4,16 @@ Status: in progress
 
 > <h3>New knowledge: </h3>
   + LLM
+  + Prompt Engineering
+  + AI Assistance for Software Development
   + RAG
+  + Embeddings
 
-# Criar um ambiente virtual do python
+> <h3>Description: </h3>
+Implement a vector storage system using ChromaDB for semantic searches in resumes, develop text segmentation techniques to enhance PDF search capabilities, 
+and create a web application with WebFlow integrating retrieval-augmented generation for analyzing candidate qualifications.
+
+# How to create a virtual environment
 
 ```bash
 #Crie uma pasta 
@@ -29,7 +36,7 @@ deactivate
 ```
 
 
-# Configurar APIs
+# APIs Configuration
 
 + Gemini API
 
@@ -88,8 +95,8 @@ print(chat_completion.choices[0].message.content)
 ```
 Source: https://console.groq.com/docs/quickstart
 
-# Configurar ChromaDB
-
+# ChromaDB Configuration
+ 
 ```bash
 #Install ChromaDB Libray
 pip install chromadb
