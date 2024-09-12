@@ -1,5 +1,11 @@
 # genAI
 
+Status: in progress
+
+> <h3>New knowledge: </h3>
+  + LLM
+  + RAG
+
 # Criar um ambiente virtual do python
 
 ```bash
